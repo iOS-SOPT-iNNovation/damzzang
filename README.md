@@ -5,4 +5,4 @@ Week 01
 
 
 Week 06
-- [Storyboard Reference](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week02.md)
+- [Storyboard Reference](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week06.md)
