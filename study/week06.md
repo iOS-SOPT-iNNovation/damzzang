@@ -122,3 +122,6 @@
    </connections>
 ```
 👆 이 부분!!
+
+
+> 추가 : 굳이 visual studio 로 열 필요 없이 storyboard 우클릭 -> Open As -> Source Code 를 클릭해도 무방하다.
