@@ -88,7 +88,7 @@ struct BarView: View {
         VStack {
             ZStack(alignment: .bottomTrailing){
                 Capsule().frame(width: 30, height: 200)
-                    .foregroundColor(Color(#colorLiteral(red: 0.01247296855, green: 0.8214810491, blue: 0.5147901773, alpha: 1)))
+                    .foregroundColor(Color(myColor)))
                 Capsule().frame(width: 30, height: value)
                     .foregroundColor(.white)
                 
@@ -105,14 +105,10 @@ struct BarView: View {
     @State var pickerSelectedItem = 0
     
     @State var dataPoints: [[CGFloat]] = [
-        [50,100,150,30,40,100,20],
-        [50,100,50,200,10,30,50],
-        [10,20,30,50,100,150,80]
+        [...],
     ]
     
-    @State var week: [String] = [
-        "0", "1", "2", "3", "4", "5", "6"
-    ]
+    @State var week: [String] = [ ... ]
 ```
 
 3. ```ZView``` 안에 ```Vstack```, ```Picker```, ```Hstack``` 선언
@@ -131,25 +127,17 @@ struct ContentView: View {
             VStack {
                 
                 Text("Calory Intake")
-                .foregroundColor(Color("title"))
-                    .font(.system(size: 34))
-                    .fontWeight(.heavy)
+                ...
                 
                 Picker(selection: $pickerSelectedItem, label: Text("")) {
-                    Text("Weekday").tag(0)
-                    Text("Afternoon").tag(1)
-                    Text("Evening").tag(2)
+                    ...
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 24)
                 
                 HStack (spacing: 20){
                     BarView(value: dataPoints[pickerSelectedItem][0], week: "Sun")
                     BarView(value: dataPoints[pickerSelectedItem][1], week: "Mon")
-                    BarView(value: dataPoints[pickerSelectedItem][2], week: "Tue")
-                    BarView(value: dataPoints[pickerSelectedItem][3], week: "Wed")
-                    BarView(value: dataPoints[pickerSelectedItem][4], week: "Thu")
-                    BarView(value: dataPoints[pickerSelectedItem][5], week: "Fri")
-                    BarView(value: dataPoints[pickerSelectedItem][6], week: "Sat")
+                    ...
                     
                 }.padding(.top, 24)
                     .animation(.default)
@@ -174,6 +162,6 @@ struct ContentView: View {
 
 <img src="./screenshots/barchart1.gif" width="200"> <img src="./screenshots/barchart2.gif" width="200">
 
-- [swiftUI tutorial](https://www.youtube.com/watch?v=5lSJzzI2fj8) 참고함
+참고 : [swiftUI tutorial](https://www.youtube.com/watch?v=5lSJzzI2fj8)
 
 
