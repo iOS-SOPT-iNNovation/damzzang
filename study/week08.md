@@ -3,7 +3,8 @@
 
 ### SwiftUI 란?
 > SwiftUI는 모든 애플 플랫폼에서 사용자 인터페이스를 만들 수 있게 해주는 새로운 개발 패러다임이다.   
-하나의 도구 및 API로 모든 애플 기기의 사용자 인터페이스를 만들 수 있게 해준다.
+하나의 도구 및 API로 모든 애플 기기의 사용자 인터페이스를 만들 수 있게 해준다.   
+기존의 Storyboard 와 Autolayout 을 대체할 수 있는 UIFramework 이다.
 
 <img src="./screenshots/swiftUI02.png" width="800">
 
