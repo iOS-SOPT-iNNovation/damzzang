@@ -158,6 +158,16 @@ struct BarView: View {
 
 <br/>
 
+👇 darkmode 와 lightmode 의 색깔 변경하기   
+
+<img src="./screenshots/chart1.png" width="300"> <img src="./screenshots/chart2.png" width="400">
+- Assets > New Color Set > Light Apperance, Dark Apperance 색상 각각 지정
+
+
+<br/>
+
+### 실행 화면
+
 <img src="./screenshots/barchart1.gif" width="200"> <img src="./screenshots/barchart2.gif" width="200">
 
 
