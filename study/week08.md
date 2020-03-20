@@ -16,10 +16,38 @@
 
 <br/>
 
-### 기본 개념
+### 첫 실행
 
+```swift
+import SwiftUI
 
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
+
+<img src="./screenshots/swiftUI03.png" width="200">
+
+- swiftUI 에서 View는 반드시 **body** 변수가 있어야 하며 최상위 View 역할을 한다.
+- ``` ContentView_Previews ``` 는 실제 앱에는 적용되지 않지만 Xcode 의 Canvas 기능을 위한 **Preview Layout** 이다.
+- ``` State ``` 어노테이션이 붙은 변수에 변경이 일어나면 자동으로 View 를 다시 렌더링 한다.
+
+<br/>
+
+### Stack
+- Vstack : 수직(Vertical) 으로 View 를 쌓음
+- Hstack : 수평(Horizontal) 으로 View 를 쌓음
+- ZStack : View 를 겹쳐서 쌓아 올림
+
+<br/>
 
 <img src="./screenshots/barchart1.gif" width="200"> <img src="./screenshots/barchart2.gif" width="200">
 
