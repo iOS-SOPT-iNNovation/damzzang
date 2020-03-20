@@ -7,8 +7,6 @@
 
 <img src="./screenshots/swiftUI02.png" width="800">
 
-
-- 어떻게 레이아웃이 보이고 작동하는지에 대한 새로운 UI
 - 실시간으로 Swift 코드 작성 시 UI 미리보기를 제공함
 - UI 변수 연결인 outlets, action 을 컴파일 할 때 체크하여 런타임 때 UIFail 의 위험을 감소시킴
 - 속도가 매우 빠름 
@@ -77,13 +75,33 @@ struct ContentView: View {
 
 ### SwiftUI 를 사용한 barChart 만들기
 
-[swiftUI tutorial](https://www.youtube.com/watch?v=5lSJzzI2fj8) 참고
+
+1. create BarView
 
 ```swift
-import SwiftUI
-
-struct ContentView: View {
+struct BarView: View {
     
+    var value: CGFloat
+    var week: String
+    
+    var body: some View {
+        VStack {
+            ZStack(alignment: .bottomTrailing){
+                Capsule().frame(width: 30, height: 200)
+                    .foregroundColor(Color(#colorLiteral(red: 0.01247296855, green: 0.8214810491, blue: 0.5147901773, alpha: 1)))
+                Capsule().frame(width: 30, height: value)
+                    .foregroundColor(.white)
+                
+            }
+            Text(week).padding(.top, 8)
+        }
+    }
+}
+```
+
+2. ```State``` 변수 선언
+
+```swift
     @State var pickerSelectedItem = 0
     
     @State var dataPoints: [[CGFloat]] = [
@@ -95,12 +113,20 @@ struct ContentView: View {
     @State var week: [String] = [
         "0", "1", "2", "3", "4", "5", "6"
     ]
-    
+```
+
+3. ```ZView``` 안에 ```Vstack```, ```Picker```, ```Hstack``` 선언
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+
     var body: some View {
         
         ZStack {
             
-            Color("appBackground").edgesIgnoringSafeArea(.all)
+            Color("appBackground").edgesIgnoringSafeArea(.all) 
             
             VStack {
                 
@@ -127,29 +153,7 @@ struct ContentView: View {
                     
                 }.padding(.top, 24)
                     .animation(.default)
-                
             }
-            
-            
-        }
-    }
-}
-
-struct BarView: View {
-    
-    var value: CGFloat
-    var week: String
-    
-    var body: some View {
-        VStack {
-            ZStack(alignment: .bottomTrailing){
-                Capsule().frame(width: 30, height: 200)
-                    .foregroundColor(Color(#colorLiteral(red: 0.01247296855, green: 0.8214810491, blue: 0.5147901773, alpha: 1)))
-                Capsule().frame(width: 30, height: value)
-                    .foregroundColor(.white)
-                
-            }
-            Text(week).padding(.top, 8)
         }
     }
 }
@@ -169,5 +173,7 @@ struct BarView: View {
 ### 실행 화면
 
 <img src="./screenshots/barchart1.gif" width="200"> <img src="./screenshots/barchart2.gif" width="200">
+
+- [swiftUI tutorial](https://www.youtube.com/watch?v=5lSJzzI2fj8) 참고함
 
 
