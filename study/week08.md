@@ -16,6 +16,10 @@
 
 ### 첫 실행
 
+UserInterface > SwiftUI 지정 
+
+<img src="./screenshots/chart3.png" width="500">
+
 ```swift
 import SwiftUI
 
