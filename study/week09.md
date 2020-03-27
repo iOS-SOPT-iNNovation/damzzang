@@ -1,6 +1,8 @@
 ## create LineChart 📈
 
-chart를 swift로 구현해보자!   
+chart를 swift로 구현해보자!  
+> 참고자료 : [LineChart Tutorial](https://medium.com/@OsianSmith/creating-a-line-chart-in-swift-3-and-ios-10-2f647c95392e)
+
 
 ### Pod Install
 
@@ -57,5 +59,15 @@ for문을 돌며 ```numbers``` 배열에 x,y value 를 추가해 append 해준�
 
 그래프에 그릴 데이터의 이름과 색깔을 지정해준 후 linechart에 데이터를 추가한다.
 
-<img src="./screenshots/linechart.gif" width="200">
+<img src="./screenshots/linechart.gif" width="200">  <img src="./screenshots/linechart1.png" width="250">
+
+성공❗️
+
+<br/>
+
+> 덧.
+[공식문서](https://github.com/danielgindi/Charts) 를 참고하면 다른 여러가지 응용 버전도 있다.   
+비슷한 방법으로 linechart 를 barchart 로 바꾸어보았다.
+
+<img src="./screenshots/linechart3.png" width="250">
 
