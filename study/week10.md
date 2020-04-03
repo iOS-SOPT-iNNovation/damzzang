@@ -35,6 +35,18 @@ class Canvas: UIView {
 
 - ```loadView``` 란??
 
+    > loadView : viewController.view 를 생성하는 곳이다. (아직 self.view 가 만들어지지 않음)   
+    viewDidLoad 에 작성한다면 아래와 동일하다. 
+    
+    ```swift
+      override func viewDidLoad(){
+        view.addSubview(canvas)
+        canvas.frame = view.frame
+      }
+    ```
+    
+<br/>   
+
 
 ### 📌 Line Model 
 
@@ -52,6 +64,8 @@ struct Line {
 
 Line 구조체는 ```stokeWidth```, ```color``` ```points[]``` 정보를 가지고 있다.  
 각각 정보는 선의 굵기, 색깔, 위치 정보를 나타낸다.
+
+<br/>
 
 ### 📌 Draw Line
 
@@ -85,6 +99,8 @@ Line 구조체는 ```stokeWidth```, ```color``` ```points[]``` 정보를 가지�
 
 - ```setNeedsDisplay()``` 란?
 
+  > View 의 컨텐츠가 변하면 이 View 가 변했다는 사실을 시스템에 알려준다.
+
 3. Draw Line
 
 ```swift
@@ -114,9 +130,9 @@ Line 구조체는 ```stokeWidth```, ```color``` ```points[]``` 정보를 가지�
 ```lines``` 를 foreach 로 돌며 line 을 그려준다.  
 ```i``` 는 index, ```p``` 는 point 를 의미한다. ```move()``` 와 ```addLine()```을 사용해 라인을 그려준다.
 
-- ```strokePath()``` 란? 
+<br/>
 
-### Undo & Clear
+### 📌 Undo & Clear
 
 ```swift
     func undo(){
@@ -134,8 +150,9 @@ Line 구조체는 ```stokeWidth```, ```color``` ```points[]``` 정보를 가지�
 
 ```undo``` 는 선 한 개를 그리기 취소하고, ```clear``` 는 모든 정보를 초기화한다.
 
+<br/>
 
-### Setting Color & Width
+### 📌 Setting Color & Width
 
 ```swift
     @objc fileprivate func handleColorChange(button: UIButton){
@@ -150,6 +167,10 @@ Line 구조체는 ```stokeWidth```, ```color``` ```points[]``` 정보를 가지�
 위 메소드를 색상 변경 버튼과 UISlider에 addTarget 시켜준다.
 
 - ```fileprivate``` 이란?
+
+  > 자체 정의 소스 파일에 대한 엔티티 사용을 제한한다.
+  해당 세부 정보가 전체 파일 내에서 사용 될 때 특정 기능의 구현 세부 정보를 숨길 수 있다. (같은 모듈 내에서도 같은 소스 파일 안에서만 사용이 가능하다.)
+
 
 ```swift
     fileprivate var strokeColor = UIColor.black
@@ -171,9 +192,11 @@ Line 구조체는 ```stokeWidth```, ```color``` ```points[]``` 정보를 가지�
         context.setLineWidth(CGFloat(line.storkeWidth))
 ```
 
-```draw()``` 메소드에서 선을 그릴 때 원하는 색상과 굵기를 지정해준다. 
+```draw()``` 메소드에서 선을 그릴 때 원하는 색상과 굵기를 지정해준다.    
+이제 최종 완성 ‼️‼️
 
+<br/>
 
-### screenshots
+### 📌 screenshots
 <img src="./screenshots/draw1.gif" width="200"> <img src="./screenshots/draw2.gif" width="200"> <img src="./screenshots/draw3.gif" width="200">
 
