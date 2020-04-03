@@ -9,3 +9,5 @@ Week 07 - [UIImagePickerController](https://github.com/iOS-SOPT-iNNovation/eunji
 Week 08 - [Animated BarChart Using SwiftUI](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week08.md)
 
 Week 09 - [LineChart](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week09.md)
+
+Week 10 - [Drawing with CanvasView](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week10.md)
