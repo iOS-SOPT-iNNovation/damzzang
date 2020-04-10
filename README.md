@@ -11,3 +11,5 @@ Week 08 - [Animated BarChart Using SwiftUI](https://github.com/iOS-SOPT-iNNovati
 Week 09 - [LineChart](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week09.md)
 
 Week 10 - [Drawing with CanvasView](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week10.md)
+
+Week 11 - [TodoList using CoreData](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week11.md)
