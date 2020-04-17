@@ -13,3 +13,5 @@ Week 09 - [LineChart](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/mas
 Week 10 - [Drawing with CanvasView](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week10.md)
 
 Week 11 - [TodoList using CoreData](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week11.md)
+
+Week 12 - [Youtube Player](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week12.md)
