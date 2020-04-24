@@ -175,7 +175,7 @@ chart 에 그릴 dummy data를 생성해 `lastFiveShows` 에 저장했다.
 ```swift
     private static func createBars() -> Group {
         
-        let fill = LinearGradient(degree: 90, from: Color(val: 0xff4704), to: Color(val: 0xff4704).with(a: 0.33))
+        let fill = LinearGradient(degree: 90, from: Color(val: 0xff4704), to: Color(val: 0xff4704).with(a: 0.33)) // 아래로 갈 수록 alpha 값이 옅어지도록 조정됨
         let items = adjustedData.map { _ in Group() }
         
         // each bar animations
@@ -203,5 +203,7 @@ chart 에 그릴 dummy data를 생성해 `lastFiveShows` 에 저장했다.
         MacawChartView.playAnimations()
     }
 ```
+
+버튼을 누르면 애니메이션이 동작하도록 한다. 그래서 `playAnimations` 는 `private` 키워드가 붙지 않는다.
 
 <img src="./screenshots/animchart3.gif" width="200">
