@@ -15,8 +15,7 @@ struct SwiftNewsVideo {
     var viewCount: Double
 }
 ```
-chart 에 그릴 정보를 담는 struct 이다.      
-bar의 이름과 수치를 저장한다.
+chart 에 그릴 정보를 담는 struct 이다. bar의 이름과 수치를 저장한다.
 
 <br/>
 
@@ -31,7 +30,6 @@ class MacawChartView: MacawView {
     
     required init?(coder aDecoder: NSCoder){
         super.init(node: MacawChartView.createChart(), coder: aDecoder)
-        backgroundColor = .clear
     }
     
     private static func createChart() -> Group { // group : array of nodes
@@ -58,9 +56,9 @@ class MacawChartView: MacawView {
 
 chart를 보여줄 `MacawChartView` 를 만든다.   
 
-`createChart` : 전체적인 chart view 를 만든다.
-`addYAxisItems` : 높이를 표시하는 height line 를 
-`addXAxisItems` : 각 chart마다 
+- `createChart` : 전체적인 chart view 를 만든다.
+- `addYAxisItems` : 높이를 표시하는 height line 를 그린다.
+- `addXAxisItems` : x축을 따라 item label을 표시한다.
 
 <br/>
 
@@ -94,16 +92,14 @@ chart 에 그릴 dummy data를 생성해 `lastFiveShows` 에 저장했다.
     static let maxValueLineHeight = 180
     static let lineWidth: Double = 275
 
-    static let dataDivisor = Double(maxValue/maxValueLineHeight)
+    static let dataDivisor = Double(maxValue/maxValueLineHeight) // 33.3333
     static let adjustedData: [Double] = lastFiveShows.map({ $0.viewCount / dataDivisor }) // $0 : each item
     static var animations: [Animation] = []
 ```
 - `max value` : bar 의 최대 수치
 - `maxValueHeight` : bar 의 최대 높이
-- `lineWidth` : 
-- `dataDivisor`
-- `adjustedData`
-- `animations`
+- `adjustedData` : 각 item의 value값을 `maxValueHeight` 에 맞게 조정한 수치
+- `animations` : animation 배열
 
 <br/>
 
@@ -120,21 +116,21 @@ chart 에 그릴 dummy data를 생성해 `lastFiveShows` 에 저장했다.
     }
 ```
 
-`addYAxisItems`, `addXAxisItems` 를 통해 Node배열인 items배열 웅앵..
+`addYAxisItems`, `addXAxisItems`, `createBars` 를 통해 그래프를 그린다.   
 
 5-2. addYAxisItem
 
 ```swift
     private static func addYAxisItems() -> [Node]{
-        let maxLines = 6
-        let lineInterval = Int(maxValue/maxLines)
-        let yAxisHeight: Double = 200
+        let maxLines = 6 // line 갯수
+        let lineInterval = Int(maxValue/maxLines) // 6000/6 : 1000
+        let yAxisHeight: Double = 200 // 전체 높이
         let lineSpacing: Double = 30
         
         var newNodes: [Node] = []
         
-        for i in 1...maxLines {
-            let y = yAxisHeight - (Double(i) * lineSpacing)
+        for i in 1...maxLines { // 1~6
+            let y = yAxisHeight - (Double(i) * lineSpacing) // 선을 그릴 높이
             let valueLine = Line(x1: -5, y1: y, x2: lineWidth, y2: y).stroke(fill: Color.white.with(a: 0.10))
             let valueText = Text(text: "\(i * lineInterval)", align: .max, baseline: .mid, place: .move(dx: -10, dy: y))
             valueText.fill = Color.white
@@ -143,7 +139,7 @@ chart 에 그릴 dummy data를 생성해 `lastFiveShows` 에 저장했다.
             newNodes.append(valueText)
         }
         
-        let yAxis = Line(x1: 0, y1: 0, x2: 0, y2: yAxisHeight).stroke(fill: Color.white.with(a: 0.25))
+        let yAxis = Line(x1: 0, y1: 0, x2: 0, y2: yAxisHeight).stroke(fill: Color.white.with(a: 0.25)) // y축
         newNodes.append(yAxis)
         
         return newNodes
@@ -158,14 +154,14 @@ chart 에 그릴 dummy data를 생성해 `lastFiveShows` 에 저장했다.
         let chartBaseY: Double = 200
         var newNodes: [Node] = []
         
-        for i in 1...adjustedData.count {
+        for i in 1...adjustedData.count { // 1~6
             let x = (Double(i) * 50) // start
             let valueText = Text(text: lastFiveShows[i-1].showNumber, align: .max, baseline: .mid, place: .move(dx: x, dy: chartBaseY + 15))
             valueText.fill = Color.white
             newNodes.append(valueText)
         }
         
-        let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.white.with(a: 0.25))
+        let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.white.with(a: 0.25)) // x
         newNodes.append(xAxis)
         
         return newNodes
