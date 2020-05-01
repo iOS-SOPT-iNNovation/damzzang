@@ -94,7 +94,40 @@ http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtpr
         },
         ... (생략)
     ],
-    ...(생략)
+    "ArpltnInforInqireSvcVo": {
+        "_returnType": "json",
+        "coGrade": "",
+        "coValue": "",
+        "dataTerm": "",
+        "dataTime": "",
+        "khaiGrade": "",
+        "khaiValue": "",
+        "mangName": "",
+        "no2Grade": "",
+        "no2Value": "",
+        "numOfRows": "10",
+        "o3Grade": "",
+        "o3Value": "",
+        "pageNo": "1",
+        "pm10Grade": "",
+        "pm10Grade1h": "",
+        "pm10Value": "",
+        "pm10Value24": "",
+        "pm25Grade": "",
+        "pm25Grade1h": "",
+        "pm25Value": "",
+        "pm25Value24": "",
+        "resultCode": "",
+        "resultMsg": "",
+        "rnum": 0,
+        "serviceKey": "g5wuVXrLzJMBI9kR2gmdXm6ltsn0zYEicoOG7g2xNHZnGZVp9v7znsIO45M2l7R6rlE5wiD/jtIZupMYvyN2Pg==",
+        "sidoName": "군산",
+        "so2Grade": "",
+        "so2Value": "",
+        "stationCode": "",
+        "stationName": "",
+        "totalCount": "",
+        "ver": "1.3"
     },
     "totalCount": 40
 }
@@ -159,7 +192,7 @@ API 와 연결할 준비를 모두 마쳤으니 이제 연결해보자
 의외로 연결 코드는 간단하다.    
 먼저 `string` 형태로 리턴값을 저장한 후 `utf8` 로 인코딩 시켜준다.
 
-```
+```swift
             do {
                 let decoder = JSONDecoder()
 
