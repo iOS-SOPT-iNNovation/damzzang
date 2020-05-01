@@ -1,8 +1,8 @@
 # 라이브러리 없이 API 연결하기
 
-라이브러리 사용 없이 외부 API 와 연결해 보자 ❗️   
-
 > 선수환경 : [한국 환경 공단 대기 오염 정보](https://www.data.go.kr/dataset/15000581/openapi.do) 사이트에서 API KEY 발급받기 (승인까지 1시간 소요)
+
+라이브러리 사용 없이 외부 API 와 연결해 보자 ❗️    
 
 위 API 에서 시도별 미세먼지 측정 정보를 조회할 것이다.
 
@@ -100,10 +100,39 @@ http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtpr
 }
 ```
 
-빈 값을 많이 리턴한다.   
-구조를 만들 때 initializer 를 붙여주고 optional을 붙여주었다. (안하면 오류남)
-[이 사이트](https://app.quicktype.io/) 를 많이 참고해 만들었고 일부 enum 값을 String 으로 모두 변환해주었다.   
-생각보다 까다롭고 복잡해서 여기에 시간을 가장 많이 쏟았다 ,, 좋은 API 는 아닌 것 같다
+리턴 값이 많이 복잡하고 빈 값도 많이 리턴한다.
+구조를 만들 때 initializer 를 붙여주고 optional을 붙여주어야 한다. (안하면 오류남)   
+
+```swift
+struct AqiResponseString: Codable {
+    let list: [ArpltnInforInqireSVCVo]?
+    let parm, arpltnInforInqireSVCVo: ArpltnInforInqireSVCVo?
+    let totalCount: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case list, parm
+        case arpltnInforInqireSVCVo
+        case totalCount
+    }
+}
+
+extension AqiResponseString {
+    ...
+}
+
+struct ArpltnInforInqireSVCVo: Codable {
+    ...
+}
+
+extension ArpltnInforInqireSVCVo {
+    ..
+}
+```
+
+> [이 사이트](https://app.quicktype.io/) 를 많이 참고해 만들었다.
+
+일부 enum 값을 String 으로 모두 변환해주었다. (그대로 쓸 수 없었다)    
+생각보다 까다롭고 복잡해서 여기에 시간을 가장 많이 쏟았다 ,, 아무튼 좋은 API 는 아닌 것 같다
 
 <br/>
 
