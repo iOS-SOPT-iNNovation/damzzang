@@ -45,17 +45,9 @@ class ViewController: UIViewController {
 //                print(object.list)
                 
                 self.aqiDataSet = [object] as! [AqiResponseString]
-//                print(self.aqiDataSet[0].list![1])
                 
                 self.misaeLabel.text = self.aqiDataSet[0].list![0].pm25Value
                 self.dateLabel.text = self.aqiDataSet[0].list![0].dataTime
-                
-                
-                
-//                print(self.aqiDataSet[0].arpltnInforInqireSVCVo?.pm25Value)
-//                self.aqiDataSet = [object]
-//                print(aqiDataSet[0])
-                
                 
             } catch (let err) {
                 print(err.localizedDescription)
@@ -72,16 +64,6 @@ class ViewController: UIViewController {
     func makeStringKoreanEncoded(_ string: String) -> String {
         return string.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? string
     }
-    
-    func jsonToObject(json: Data){
-        do{
-            let db = try JSONDecoder().decode([AqiResponseString].self, from: json)
-            print(db)
-        } catch let jsonErr {
-            print(jsonErr)
-        }
-    }
-    
     
 }
 
