@@ -17,3 +17,5 @@ Week 11 - [TodoList using CoreData](https://github.com/iOS-SOPT-iNNovation/eunji
 Week 12 - [Youtube Player](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week12.md)
 
 Week 13 - [Animated Chart](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week13.md)
+
+Week 14 - [Connect to API without Library](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week13.md)
