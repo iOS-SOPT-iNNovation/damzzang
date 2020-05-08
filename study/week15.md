@@ -96,7 +96,7 @@ import AVFoundation
 
 <br/>
 
-4. Setting play, pause 
+4. Setting play, pause button
 
 ```swift
     @objc func didTapPlayPauseButton(){
@@ -128,11 +128,64 @@ import AVFoundation
 ```
 
 플레이어가 현재 실행되는 중인 경우 플레이어를 pause 하고 play 이미지로 바꿔준다.   
-반대로 플레이어가 현재 멈춘 상태인 경우 플레이어를 재생하고 pause 이미지로 바꾼다. 
+반대로 플레이어가 현재 멈춘 상태인 경우 플레이어를 재생하고 pause 이미지로 바꾼다.    
+
+플레이어가 pause 상태인 경우 이미지가 약간 축소되는 간단한 애니메이션을 넣어보았다.
 
 <br/>
 
-실행 화면
+5. Setting volume
+
+```swift
+    slider.addTarget(self, action: #selector(didSlideSlider(_:)), for: .valueChanged)
+```
+
+```swift
+    @objc func didSlideSlider(_ slider: UISlider){
+        let value = slider.value
+        player?.volume = value
+    }
+```
+
+slider value 에 따라 플레이어 볼륨 크기를 조절한다.
+
+<br/>
+
+6. move to back / foward song
+
+```swift
+    @objc func didTapBackButton(){
+        if position > 0 {
+            position = position - 1
+            player?.stop()
+            for subview in holder.subviews {
+                subview.removeFromSuperview()
+            }
+            configure()
+        }
+    }
+```
+
+이전 곡으로 넘어갈 때, `position > 0 ` 일 경우 (이전 곡이 존재하는 경우) 현재 곡 위치를 바꿔준 후 다시 뷰를 렌더링한다.
+
+```swift
+    @objc func didTapNextButton(){
+        if position < (songs.count-1)  {
+            position = position +  1
+            player?.stop()
+            for subview in holder.subviews {
+                subview.removeFromSuperview()
+            }
+            configure()
+        }
+    }
+```
+
+다음 곡으로 넘어갈 때 `position < (songs.count-1)` 일 경우 (다음 곡이 존재하는 경우) 마찬가지로 현재 곡 위치를 바꿔준 후 다시 뷰를 렌더링한다.
+
+<br/>
+
+### Screenshot📱
 
 <img src="./screenshots/musicplayer.gif" width="300">
 
