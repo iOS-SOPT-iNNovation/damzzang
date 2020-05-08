@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     var aqiDataSet = [AqiResponseString]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,32 +27,29 @@ class ViewController: UIViewController {
     @IBAction func callMisaeAPI(_ sender: UIButton) {
         
         let region = "서울"
+        
+        //        URLComponents().queryItems
+        
         let encodeRegion = makeStringKoreanEncoded(region)
         let encodeURL = urlString + encodeRegion + urlString2
-//        print(encodeURL)
+        //        print(encodeURL)
         let url = URL(string: encodeURL)!
         
         do {
             let responseString = try String(contentsOf: url)
-//            print(responseString)
+            //            print(responseString)
             
             guard let data = responseString.data(using: .utf8) else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-//                print(data)
-                let object = try decoder.decode(AqiResponseString.self, from: data)
-//                print(object.list)
+
+            let decoder = JSONDecoder()
+            if let object = try? decoder.decode(AqiResponseString.self, from: data) {
                 
                 self.aqiDataSet = [object] as! [AqiResponseString]
                 
                 self.misaeLabel.text = self.aqiDataSet[0].list![0].pm25Value
                 self.dateLabel.text = self.aqiDataSet[0].list![0].dataTime
                 
-            } catch (let err) {
-                print(err.localizedDescription)
             }
-  
             
         } catch let e as NSError {
             print(e.localizedDescription)
