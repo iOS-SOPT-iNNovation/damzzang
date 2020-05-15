@@ -22,4 +22,4 @@ Week 14 - [Connect to API without Library](https://github.com/iOS-SOPT-iNNovatio
 
 Week 15 - [Music Player](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week15.md)
 
-Week 15 - [Make UIView with XML](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week16.md)
+Week 16 - [Make UIView with XML](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week16.md)

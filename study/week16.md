@@ -10,7 +10,7 @@ xml 과 연결해서 UI를 만들어보자❗️
 pod 'Layout', '~> 0.6'
 ```
 
-### AppDelegate
+## AppDelegate
 
 ```swift
 @UIApplicationMain
@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-### Load XML
+`rootview` 지정하기
+
+## Load XML
 
 ```swift
 import Layout
@@ -63,7 +65,8 @@ class ViewController: UIViewController, LayoutLoading {
 - `named` : 불러올 xml 파일 이름
 - `state`, `constants` : layout의 properties 지정 
 
-### XML
+
+## XML
 
 ```xml
 <UIStackView
