@@ -1,0 +1,13 @@
+<UIView
+    backgroundColor="purple">
+     
+    <UILabel
+        text="Hello world!@!@"
+        textColor="white"
+        center.y= "50%"
+        center.x= "50%"
+        font="40 bold"
+        >
+    </UILabel>
+    
+</UIView>

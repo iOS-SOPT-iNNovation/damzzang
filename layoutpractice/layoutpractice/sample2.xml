@@ -1,0 +1,11 @@
+<UIStackView
+    alignment="center"
+    axis="vertical"
+    width="100%"
+    height="50%"
+    spacing="10">
+    
+    <UILabel text="First {title}"  />
+    <UILabel text="Second {title}" />
+    
+</UIStackView>

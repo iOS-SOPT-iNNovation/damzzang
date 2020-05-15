@@ -1,0 +1,18 @@
+PODS:
+  - Layout (0.7.0):
+    - Layout/Core (= 0.7.0)
+  - Layout/Core (0.7.0)
+
+DEPENDENCIES:
+  - Layout (~> 0.6)
+
+SPEC REPOS:
+  trunk:
+    - Layout
+
+SPEC CHECKSUMS:
+  Layout: 06efb0889c3065340eefceefb938b0add675a12b
+
+PODFILE CHECKSUM: 1d9e2864e5df54c6919dbc60828bfbad96813a0d
+
+COCOAPODS: 1.9.1
