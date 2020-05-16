@@ -99,6 +99,21 @@ class ViewController: UIViewController, LayoutLoading {
 
 ```
 
+xml에서 지정할 수 있는 layout prperties 
+
+```
+top
+left
+bottom
+right
+leading
+trailing
+width
+height
+center.x
+center.y
+```
+
 ### screenshot
 
 <img src="./screenshots/layout1.png" width="300"> <img src="./screenshots/layout2.png" width="300">
