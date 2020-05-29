@@ -24,4 +24,6 @@ Week 15 - [Music Player](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/
 
 Week 16 - [Make UIView with XML](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week16.md)
 
-Week 16 - [Make UIView with XML (2) ](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week17.md)
+Week 17 - [Make UIView with XML (2) ](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week17.md)
+
+Week 18 - [Custom Navigation Bar](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week18.md)
