@@ -54,8 +54,9 @@ extension UIImage {
 
 위 `UIImage Extension` 은 `CALayer` 에서 이미지를 만들 수 있도록 한다.    
 
-CALayer 이란? 
-<img src="./screenshot/nav1.png" width="400">
+CALayer 이란?
+
+<img src="./screenshots/nav1.png" width="400">
 
 실제로는 UIView에 속하며 실질적으로 뷰 위에 컨텐츠와 애니메이션을 그리는 행위를 담당한다.  그리고 가볍다!
 
@@ -149,8 +150,7 @@ small title 일 경우, large title 일 경우 모두 처리한다.
 
 ## Setting on Storyboard
 
-<img src="./screenshots/nav2.png" width="300">
-<img src="./screenshots/nav3.png" width="200">
+<img src="./screenshots/nav2.png" width="300"> <img src="./screenshots/nav3.png" width="300">
 
 navigation controller 를 누른 다음 우리가 작성한 `navigationViewController.swift` 파일을 세팅한다.
 
