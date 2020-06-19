@@ -14,7 +14,7 @@ MapVC 에서 구현할 기능은 크게 세 가지이다.
 
 ## Add Map Kit View
 
-<img src="./screenshots/map3.png" width="400">
+<img src="./screenshots/map3.png" width="600">
 
 Storyboard에 위 Map Kit View 를 추가하기만 하면 놀랍게도 지도가 불러와진다.     
 
@@ -32,7 +32,7 @@ ViewDidLoad 에서 이 코드를 추가하니 말끔히 문제가 해결되었�
 
 지도가 준비되었으니 이제 내 위치를 지도에 찍어보자.
 
-<img src="./screenshots/map4.png" width="400">
+<img src="./screenshots/map4.png" width="500">
 
 Info.plist 에 `NSLocationWhenInUseUsageDescription` 이나 `NSLocationAlwaysUsageDescription` 을 추가한다. 
 
@@ -143,7 +143,7 @@ func locationManager(_ manager: CLLocationManager, didChangeAuthorization status
 내 현재 위치를 locatioinManager.location 값을 저장하는 함수이다. 복잡해 보여서 그냥 밖으로 뺐다. 
 
 
-<img src="./screenshots/map0.gif" width="300"> <img src="./screenshot/map1.gif" width="300">
+<img src="./screenshots/map0.gif" width="300"> <img src="./screenshots/map1.gif" width="300">
 
 코드를 모두 작성하면 이렇게 지도에 내 위치가 뜬다.
 
