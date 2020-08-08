@@ -22,7 +22,6 @@ Observable<Int>.create { (observer) -> Disposable in
 
 // #2
 Observable.from([0,1]) // 순서대로 방출
-
 ```
 
 <br/>
@@ -81,11 +80,9 @@ o3.disposed(by: disposeBag)
 >> 1 completed
 >> 2 completed
 >> 3 completed
-
 ```
 
 `PublishSubject` 는 **구독 이후** 에 전달되는 새로운 이벤트만 구독자로 전달한다.     
-위 예시에서는 
 
 그러므로 구독 전 이벤트인  `Hello` 는 프린트 하지 않는다.
 
