@@ -30,6 +30,6 @@ Week 18 - [Custom Navigation Bar](https://github.com/iOS-SOPT-iNNovation/eunjizz
 
 Week 20 - [Apple Map 사용하기](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week20.md)
 
-Week 22 - [Rxswift ](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week21.md)
+Week 22 - [Rxswift : 처음 시작하기](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week22.md)
 
-Week 24 - [Rxswift ](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week23.md)
+Week 24 - [Rxswift : Observable, Subject, Operator ](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week24.md)
