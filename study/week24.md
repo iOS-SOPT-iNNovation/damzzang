@@ -241,3 +241,137 @@ next(11)
 next(22)
 ```
 
+<br/>
+
+
+### 6. `combineLast`
+
+combineLast 는 가장 마지막으로 방출되는 두 요소를 결합한 값을 리턴한다.
+
+```swift
+
+
+let bag = DisposeBag()
+
+enum MyError: Error {
+    case error
+}
+
+let greetings = PublishSubject<String>()
+let languages = PublishSubject<String>()
+
+// 두 개의 observable 과 closure 를 파라미터로 받음
+Observable.combineLatest(greetings, languages){ lhs, rhs -> String in
+    return "\(lhs) \(rhs)"
+}
+    .subscribe { print($0) }
+    .disposed(by: bag)
+
+// greeting subject 로 이벤트를 전달했으나 language 에 전달되는 이벤트 없으므로 구독자에게 전달되는 이벤트도 없음
+greetings.onNext("hi") // none.
+
+// language subject 로 이벤트 전달 -> 구독자에게 이벤트 전달됨
+languages.onNext("world!") // hi world
+ 
+// 가장 최근에 방출된 요소를 대상으로 클로저 실행 -> 결과를 바로 구독자에게 전달
+greetings.onNext("Hello") // Hello world
+
+languages.onNext("RxSwift") // Hello RxSwift
+
+
+
+// 아직 language subject 로 completed 이벤트가 전달되지 않아 구독자에게 completed 이벤트가 전달되지 않음
+greetings.onCompleted()
+languages.onNext("SwiftUI") // Hello SwiftUI
+
+
+// 모든 observable 이 completed 이벤트 전달 -> 이 시점의 구독자에게 completed 이벤트 전달함
+languages.onCompleted()
+
+// source observable 중 하나라도 에러 이벤트를 전달하면 그 즉시 구독지에게 에러 이벤트를 전달하고 종료시킴
+
+```
+
+```
+next(hi world!)
+next(Hello world!)
+next(Hello RxSwift)
+next(Hello SwiftUI)
+completed
+```
+
+<br/>
+
+## binding
+
+실제 rx를 프로젝트에 반영해보자~!    
+
+textfield 의 값이 업데이트 될 때마다 label 값을 업데이트 하려면 흔히 쓰는 방법은 아래와 같다.
+
+
+```swift
+valueField.delegate = self
+```
+
+```swift
+extension BindingCocoaTouchViewController: UITextFieldDelegate {
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+      
+      guard let currentText = textField.text else {
+         return true
+      }
+      
+      let finalText = (currentText as NSString).replacingCharacters(in: range, with: string)
+      valueLabel.text = finalText
+      
+      return true
+   }
+}
+```
+
+<br/>
+
+`UITextFieldDelegate` 패턴 말고 Rx을 응용해보자₩!
+
+```swift
+     valueField.rx.text
+          .subscribe(onNext: { [weak self] str in
+              self?.valueLabel.text = str
+          })
+          .disposed(by: disposeBag)
+```
+
+코드가 훨씬 간결해졌으나 Main Thread 에서 실행되는 문제점이 있다.     
+
+
+- 해결 방법 1 : `DispatchQueue` 사용
+```swift
+      valueField.rx.text
+            .subscribe(onNext: {[weak self] str in
+                DispatchQueue.main.async {
+                    self?.valueLabel.text = str
+                }
+            })
+            .disposed(by: disposeBag)
+```
+
+- 해결 방법 2 : `MainScheduler` 사용
+```swift
+    valueField.rx.text
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: {[weak self] str in
+            DispatchQueue.main.async {
+                self?.valueLabel.text = str
+            }
+        })
+        .disposed(by: disposeBag)
+```
+
+- 해결 방법 3 : 가장 흔히 사용하는 방법 ❗️
+```swift
+    valueField.rx.text
+           .bind(to: valueLabel.rx.text)
+           .disposed(by: disposeBag)
+```
+
+<img src = "./screenshots/rx-bind.gif" width="300">
