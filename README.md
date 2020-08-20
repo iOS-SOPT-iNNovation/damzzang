@@ -67,3 +67,8 @@
 15. [Week 24](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week24.md)
 
     > RxSwift 의 기본 개념을 익히고 간단한 실습 진행하기 (Observable, Subject, Operator, Binding)_
+
+16. [Week 25](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week25.md)
+
+    >  Infinite scroll 을 만들어보기
+
