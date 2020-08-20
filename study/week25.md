@@ -81,15 +81,15 @@ class APICaller {
 
 
 <details>
-	<summary>레이아웃이 결정되는 과정</summary>
+<summary>레이아웃이 결정되는 과정</summary>
 
-    <br/>
-    
-        1. ViewWillLayoutSubViews() 메소드를 호출한다.
-        2. 뷰컨의 contentView 가 layoutSubviews() 를 호출한다. 
-              - 이 메서드는 현재 레이아웃 정보들을 바탕으로 새로운 레이아웃 정보를 계산한다. 이후 뷰 계층구조를 순회하면서 모든 하위 뷰들이 동일한 메서드를 호출하게 한다.
-        3. 레이아웃 정보의 변경 사항들을 뷰들에 반영한다. 
-        4. ViewDidLayoutSubviews() 메소드를 호출한다. 
+1. ViewWillLayoutSubViews() 메소드를 호출한다.
+2. 뷰컨의 contentView 가 layoutSubviews() 를 호출한다. 
+    - 이 메서드는 현재 레이아웃 정보들을 바탕으로 새로운 레이아웃 정보를 계산한다. 이후 뷰 계층구조를 순회하면서 모든 하위 뷰들이 동일한 메서드를 호출하게 한다.
+3. 레이아웃 정보의 변경 사항들을 뷰들에 반영한다. 
+4. ViewDidLayoutSubviews() 메소드를 호출한다. 
+	
+	
 </details>
 
 
