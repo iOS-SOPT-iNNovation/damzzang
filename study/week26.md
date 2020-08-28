@@ -2,9 +2,9 @@
 
 View Controller 에서는 생명주기는  화면에 보여졌다가 사라지는 주기를 말합니다.
 
-<p align="center"><img src="./screenshots/vc1.png" width="500"></p>
+<p align="center"><img src="./screenshots/vc1.png" width="400"></p>
 
-### `loadView()`
+### 1. `loadView()`
 
 화면에 띄워줄 view를 만드는 메소드로  view를 만들고 메모리에 올립니다.
 
@@ -12,7 +12,7 @@ View Controller 에서는 생명주기는  화면에 보여졌다가 사라지�
 
 <br/>
 
-###  `viewDidLoad()`
+### 2. `viewDidLoad()`
 
 뷰의 컨트롤러가 메모리에 로드 된 후에 호출되며 시스템에 의해 자동으로 호출이 됩니다.  사용자에게 화면이 보여지기 전에 데이터를 뿌려주는 행위에 대한 코드를 작성할 수 있습니다.반적으로 리소스를 초기화하거나, 초기화면을 구성하는 용도로 주로 쓰입니다.
 
@@ -21,9 +21,9 @@ View Controller 에서는 생명주기는  화면에 보여졌다가 사라지�
 
 <br/>
 
-### `viewWillAppear()`
+### 3. `viewWillAppear()`
 
-<p align="center"><img src="./screenshots/vc1.png" width="500"></p>
+<p align="center"><img src="./screenshots/vc2.png" width="500"></p>
 
 뷰 컨트롤러의 화면이 올라오고 난후 뷰가 화면에 나타나기 직전에 호출이 됩니다. 즉 뷰가 로드 된 이후, 눈에 보이기 전에 컨트롤러에게 알리는 역할을 수행합니다. 
 
@@ -34,24 +34,19 @@ View Controller 에서는 생명주기는  화면에 보여졌다가 사라지�
 
 <br/>
 
-### `viewDidAppear()`
+### 4. `viewDidAppear()`
 
 view가 데이터와 함께 완전히 화면에 나타난 후 호출되는 메소드입니다.
 
 <br/>
 
-### `viewWillDisappear()`
+### 5. `viewWillDisappear()`
 
 다음 View Controller 화면이 전환하기 전이나 View Controller 가 사라지기 직전에 호출되는 메소드입니다.
 
 <br/>
 
-### `viewDidDisappear()`
+### 6. `viewDidDisappear()`
 
 View Controller들이 화면에서 사라지고 나서 호출되는 메소드입니다. 화면이 사라지고 나서 필요없어지는 (멈춰야하는) 작업들을 여기서 할 수 있습니다. 
 
-<br/>
-
-### ``
-
-<br/>
