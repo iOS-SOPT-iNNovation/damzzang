@@ -72,3 +72,7 @@
 
     >  Infinite scroll 을 만들어보기
 
+16. [Week 26](https://github.com/iOS-SOPT-iNNovation/eunjizzang/blob/master/study/week26.md)
+
+>  ViewController 의 생명주기
+
