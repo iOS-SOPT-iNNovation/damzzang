@@ -82,5 +82,8 @@
     
 18. [Week28](https://silver-g-0114.tistory.com/104)
 
-    > 애플 로그인 구현하기(1)
+    > 애플 로그인 구현하기
+    
+19. [Week29](https://silver-g-0114.tistory.com/106)
 
+    > NotificationCenter 
