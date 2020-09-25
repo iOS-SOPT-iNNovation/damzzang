@@ -80,10 +80,14 @@
     
     > 카카오 소셜 로그인 구현하기
     
-18. [Week28](https://silver-g-0114.tistory.com/104)
+18. [Week 28](https://silver-g-0114.tistory.com/104)
 
     > 애플 로그인 구현하기
     
-19. [Week29](https://silver-g-0114.tistory.com/106)
+19. [Week 29](https://silver-g-0114.tistory.com/106)
 
     > NotificationCenter 
+
+20. [Week 30](https://silver-g-0114.tistory.com/107)
+
+    > property observer - didSet, willSet 
