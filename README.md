@@ -86,8 +86,12 @@
     
 19. [Week 29](https://silver-g-0114.tistory.com/106)
 
-    > NotificationCenter 
+    > NotificationCenter 사용하기
 
 20. [Week 30](https://silver-g-0114.tistory.com/107)
 
-    > property observer - didSet, willSet 
+    > property observer - didSet, willSet 사용하기
+
+21. [Week 31](https://silver-g-0114.tistory.com/113)
+
+    > UIFontPickerViewController 사용해 폰트 적용하기
